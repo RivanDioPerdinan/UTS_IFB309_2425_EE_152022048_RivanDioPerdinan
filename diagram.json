@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "author": "Rivan Dio Perdinan",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 16.2, "left": -74, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 192, "left": -263.96, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": 259.5, "left": 71.4, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 284.4,
+      "left": -53.8,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 284.4,
+      "left": -92.2,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 284.4,
+      "left": -25,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -122.4,
+      "left": -94.2,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": 249.8, "left": 192, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "bb1:bp.1", "white", [ "h0" ] ],
+    [ "esp:GND.2", "bb1:bn.1", "black", [ "v0" ] ],
+    [ "led2:C", "bb1:bn.2", "black", [ "v0" ] ],
+    [ "led1:C", "bb1:bn.3", "black", [ "v0" ] ],
+    [ "led3:C", "bb1:bn.4", "black", [ "v0" ] ],
+    [ "dht1:GND", "bb1:bn.5", "black", [ "v0" ] ],
+    [ "dht1:VCC", "bb1:bp.2", "white", [ "v0" ] ],
+    [ "esp:12", "bb1:1b.j", "red", [ "v-144", "h124.95" ] ],
+    [ "led1:A", "bb1:1b.i", "red", [ "v0" ] ],
+    [ "esp:5", "bb1:3b.j", "green", [ "h28.8", "v-19.2" ] ],
+    [ "led2:A", "bb1:3b.i", "green", [ "v0" ] ],
+    [ "esp:16", "bb1:4b.j", "violet", [ "h0" ] ],
+    [ "esp:17", "bb1:8b.j", "blue", [ "h0" ] ],
+    [ "bz1:2", "bb1:4b.i", "violet", [ "v0" ] ],
+    [ "bz1:1", "bb1:bn.7", "black", [ "v172.8", "h-19.2" ] ],
+    [ "relay1:IN", "bb1:8b.i", "green", [ "h0" ] ],
+    [ "led3:A", "bb1:6b.j", "green", [ "v0" ] ],
+    [ "esp:13", "bb1:6b.i", "gold", [ "h0" ] ],
+    [ "dht1:SDA", "bb1:16b.j", "#8f4814", [ "v0" ] ],
+    [ "esp:4", "bb1:16b.i", "#8f4814", [ "h0" ] ],
+    [ "relay1:GND", "bb1:bn.17", "black", [ "h0" ] ],
+    [ "relay1:VCC", "bb1:bp.18", "white", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
